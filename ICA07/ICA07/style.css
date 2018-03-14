@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css?family=Bitter');
+
+body {
+    background-color: lightgrey;
+    font-family: 'Bitter', serif;
+}
+
+.header {
+    background-color: whitesmoke;
+    text-align: center;
+    font-size: 3em;
+    color: white;
+    text-shadow: 2px 2px 4px black;
+}
+
+.footer {
+    background-color: whitesmoke;
+    text-align: center;
+}
+
+.Center {
+    text-align: center;
+}
+
+.FullWidth {
+    width: 100%;
+}
+
+
+.container {
+    display: grid;
+    padding: 10px;
+    grid-template-columns: 1fr 30fr 1fr;
+    grid-gap: 20px;
+}
+
+.contItem {
+    grid-column: 2/3;
+    background-color: linen;
+}
+
+.embeddedCont {
+    display: grid;
+    padding: 10px;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+}
+
+.embeddedButton {
+    grid-column: 1/3;
+}
+
+
+
+
+#table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    padding: 10px;
+}
+
+    th:nth-child(even) {
+        background-color: lightgreen;
+    }
+
+    th:nth-child(odd) {
+        background-color: lightblue;
+    }
+
+tr:nth-child(even) {
+    background-color: grey;
+}
+
+tr:nth-child(odd) {
+    background-color: white;
+}
