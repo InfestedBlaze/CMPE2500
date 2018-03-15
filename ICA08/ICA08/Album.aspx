@@ -9,11 +9,14 @@
     <title>ICA 8 - Album</title>
 </head>
 <body>
-    <div class="header">
+    <div id="header" class="header">
         -- Album of [-]
     </div>
 
     <form id="form1" runat="server">
+
+        <asp:HiddenField ID="PictureCount" runat="server" />
+
         <div class="container">
             <div class="contItem">
                 <div class="albumSorting">

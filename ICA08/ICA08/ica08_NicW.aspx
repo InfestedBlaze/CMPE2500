@@ -13,9 +13,12 @@
     </div>
 
     <form id="form1" runat="server">
+
+        <asp:HiddenField ID="LastUploadedPic" runat="server" />
+
         <div class="container">
             <div class="contItem">
-                <asp:MultiView ID="MultiView" runat="server">
+                <asp:MultiView ID="MultiView" runat="server" ActiveViewIndex="0">
                     <%-- Login page --%>
                     <asp:View ID="View1" runat="server">
                         <div class="embeddedCont">
@@ -26,22 +29,19 @@
                     </asp:View>
                     <%-- Add picture page --%>
                     <asp:View ID="View2" runat="server" OnActivate="View2_Activate">
-                        <asp:Label ID="ThankYou" runat="server" Text="Thank you --, select a picture to upload:"></asp:Label>
-                        <div>
-                            <asp:Button ID="BrowseFile" runat="server" Text="Browse..." />
-                            <asp:Label ID="FileDirectoryLabel" runat="server" Text="No file selected."></asp:Label>
-                        </div>
+                        <asp:Label ID="ThankYou" runat="server" Text="Thank you --, select a picture to upload:"></asp:Label><br />
+                        <asp:FileUpload ID="FileUpload_Image" Text="No file selected." runat="server" />
                         <asp:Button ID="Nextv2" CssClass="FullWidth" runat="server" Text="Next" OnClick="Nextv2_Click" />
                     </asp:View>
                     <%-- Status page --%>
                     <asp:View ID="View3" runat="server">
-                    
+                        <%-- Empty View --%>
                     </asp:View>
                 </asp:MultiView>
-
+                <%-- Always on the page items --%>
                 <asp:Label ID="Status" CssClass="FullWidth contItem" runat="server" BorderStyle="Inset" BackColor="#99FFCC" Text="&nbsp;"></asp:Label>
-                <asp:Button ID="GoToAlbum" CssClass="FullWidth contItem" runat="server" Text="Go to Album"/>
-                <asp:Button ID="Logout" CssClass="FullWidth contItem" runat="server" Text="Logout"/>
+                <asp:Button ID="GoToAlbum" CssClass="FullWidth contItem" runat="server" Text="Go to Album" OnClick="GoToAlbum_Click"/>
+                <asp:Button ID="Logout" CssClass="FullWidth contItem" runat="server" Text="Logout" OnClick="Logout_Click"/>
             </div>
         </div>
     </form>
