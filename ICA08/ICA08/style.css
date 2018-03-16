@@ -77,3 +77,11 @@ tr:nth-child(even) {
 tr:nth-child(odd) {
     background-color: white;
 }
+
+/*Only for ica8*/
+.albumSorting {
+    display: grid;
+    padding: 10px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 20px;
+}

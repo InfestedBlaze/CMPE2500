@@ -16,24 +16,30 @@ public partial class ica08_NicW : System.Web.UI.Page
         {
             Status.Text = "Let's begin.";
         }
-        //Back from our album page
-        if (IsCrossPagePostBack)
-        {
-            //Add another picture
-            Status.Text = $"Add another! You already have -";
-            MultiView.ActiveViewIndex = 1;
-        }
-    }
 
-    protected void GoToAlbum_Click(object sender, EventArgs e)
-    {
-        
+        //Back from our album page
+        if (Page.PreviousPage != null && Page.PreviousPage.IsCrossPagePostBack)
+        {
+            object hf = Page.PreviousPage.FindControl("PictureCount");
+            //Add another picture
+            if(hf is HiddenField)
+            {
+                Status.Text = $"Add another! You already have {(hf as HiddenField).Value}";
+                MultiView.ActiveViewIndex = 1;
+            }
+            
+            if(Session["username"] == null)
+            {
+                Status.Text = "Login";
+                MultiView.ActiveViewIndex = 0;
+            }
+        }
     }
 
     protected void Logout_Click(object sender, EventArgs e)
     {
-        //Clear username
-        Session["username"] = "";
+        //Clear the session
+        Session.Clear();
         //Go back to login screen
         MultiView.ActiveViewIndex = 0;
     }
@@ -113,7 +119,7 @@ public partial class ica08_NicW : System.Web.UI.Page
         //Save our last pic filename
         LastUploadedPic.Value = FileUpload_Image.FileName;
         //Saved the file successfully
-        Status.Text = "Saved picture";
+        Status.Text = $"Saved picture: {FileUpload_Image.FileName}";
         //Go to next view
         MultiView.ActiveViewIndex++;
     }

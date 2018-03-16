@@ -5,12 +5,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <link href="style.css" rel="stylesheet" />
-    <link href="AlbumStyle.css" rel="stylesheet" />
     <title>ICA 8 - Album</title>
 </head>
 <body>
     <div id="header" class="header">
-        -- Album of [-]
+        
     </div>
 
     <form id="form1" runat="server">
@@ -25,7 +24,7 @@
                     </asp:PlaceHolder>
                 </div>
                 
-                <asp:Button ID="UploadAgain" CssClass="FullWidth" runat="server" Text="Add Again" />
+                <asp:Button ID="UploadAgain" CssClass="FullWidth" runat="server" Text="Add Again" PostBackUrl="~/ica08_NicW.aspx" />
             </div>
         </div>
     </form>
