@@ -39,9 +39,9 @@
                     </asp:View>
                 </asp:MultiView>
                 <%-- Always on the page items --%>
-                <asp:Label ID="Status" CssClass="FullWidth contItem" runat="server" BorderStyle="Inset" BackColor="#99FFCC" Text="&nbsp;"></asp:Label>
-                <asp:Button ID="GoToAlbum" CssClass="FullWidth contItem" runat="server" Text="Go to Album" PostBackUrl="~/Album.aspx"/>
-                <asp:Button ID="Logout" CssClass="FullWidth contItem" runat="server" Text="Logout" OnClick="Logout_Click"/>
+                <asp:Label ID="Status" CssClass="FullWidth" runat="server" BorderStyle="Inset" BackColor="#99FFCC" Text="&nbsp;"></asp:Label>
+                <asp:Button ID="GoToAlbum" CssClass="FullWidth" runat="server" Text="Go to Album" PostBackUrl="~/Album.aspx"/>
+                <asp:Button ID="Logout" CssClass="FullWidth" runat="server" Text="Logout" OnClick="Logout_Click"/>
             </div>
         </div>
     </form>
