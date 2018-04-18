@@ -32,7 +32,7 @@ public partial class Album : System.Web.UI.Page
                     foreach (FileInfo item in fiA)
                     {
                         Image img = new Image();
-                        img.ImageUrl = @"\Uploads\" + Session["username"] + "\\" + item.Name.ToString();
+                        img.ImageUrl = @"\Uploads\" + Session["username"] + @"\" + item.Name;
                         img.Height = 200;
                         img.Visible = true;
 
