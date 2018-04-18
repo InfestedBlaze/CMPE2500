@@ -9,6 +9,6 @@
         <asp:TextBox ID="TextBoxFilter" runat="server"></asp:TextBox>
         <asp:Button ID="ButtonFilter" runat="server" Text="Filter" OnClick="ButtonFilter_Click" />
     </div>
-    <asp:GridView ID="GridViewCustomerCategory" runat="server"></asp:GridView>
+    <asp:GridView ID="GridViewCustomerCategory" runat="server" OnRowDataBound="GridViewCustomerCategory_RowDataBound"></asp:GridView>
 </asp:Content>
 

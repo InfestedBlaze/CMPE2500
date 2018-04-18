@@ -1,4 +1,10 @@
-﻿using System;
+﻿/* Author: Nic Wasylyshyn
+ * Date: April 18, 2018
+ * Description:
+ * This webpage will allow you to view customer information
+ * by using stored procedures from a SQL server
+ */
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -36,5 +42,18 @@ public partial class ICA13 : System.Web.UI.Page
         ddl.DataBind();
         ddl.Items.Insert(0, new ListItem($"Please Pick a Customer from [{ddl.Items.Count}]", ""));
         ddl.AutoPostBack = true;
+    }
+
+    protected void GridViewCustomerCategory_RowDataBound(object sender, GridViewRowEventArgs e)
+    {
+        if(e.Row.Cells.Count == 3)
+        {
+            e.Row.Cells[1].HorizontalAlign = HorizontalAlign.Center;
+            e.Row.Cells[2].HorizontalAlign = HorizontalAlign.Right;
+            if(decimal.TryParse(e.Row.Cells[2].Text, out decimal temp))
+            {
+                e.Row.Cells[2].Text = temp.ToString("C2");
+            }
+        }
     }
 }

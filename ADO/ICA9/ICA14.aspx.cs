@@ -1,4 +1,11 @@
-﻿using System;
+﻿/* Author: Nic Wasylyshyn
+ * Date: April 18, 2018
+ * Description:
+ * This webpage will allow you to delete and insert
+ * order details into the SQL server by using stored 
+ * procedures from a SQL server
+ */
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
